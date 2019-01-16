@@ -5,5 +5,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && \
     bash /tmp/miniconda.sh -p /opt/miniconda -u -f -b && \
     ln -sf /opt/miniconda/bin/* /usr/local/bin/ && \
     pip install -U requests ipython && \
-    apt-get clean && apt-get autoremove -y
+    apt-get clean && apt-get autoremove -y && \
+    rm -f /tmp/miniconda.sh 
 CMD ["/bin/bash"]
